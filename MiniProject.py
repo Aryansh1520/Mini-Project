@@ -67,9 +67,9 @@ def game(player1name,player2name):
                             rx,ry = 10,600
                             positionred = 1
                         elif (positionred >= 1 and positionred<100 )and diceroll!=6:
-                            rx,ry,positionred = gp.position(positionred,diceroll,"Yellow",screen)
+                            rx,ry,positionred = gp.position(positionred,diceroll,"Yellow")
                         elif (positionred >= 1 and positionred<100 )and diceroll==6:
-                            rx,ry,positionred = gp.position(positionred,diceroll,"Yellow",screen)
+                            rx,ry,positionred = gp.position(positionred,diceroll,"Yellow")
                             turn = "red"
 
 
@@ -81,9 +81,9 @@ def game(player1name,player2name):
                             bx,by = 30,600
                             positionblue = 1
                         elif (positionblue >= 1 and positionblue<100) and diceroll!=6:
-                            bx,by,positionblue = gp.position(positionblue,diceroll,"Blue",screen)
+                            bx,by,positionblue = gp.position(positionblue,diceroll,"Blue")
                         elif (positionblue >= 1 and positionblue<100) and diceroll==6:
-                            bx,by,positionblue = gp.position(positionblue,diceroll,"Blue",screen)
+                            bx,by,positionblue = gp.position(positionblue,diceroll,"Blue")
                             turn = "blue"
 
 
@@ -100,33 +100,31 @@ def pick_number():
     if diceroll == 1:
         dice = pygame.image.load(r".\assets\one.png")
         dice = pygame.transform.scale(dice,size)
-        print(1)
+
     elif diceroll == 2:
         dice = pygame.image.load(r".\assets\two.png")
         dice = pygame.transform.scale(dice,size)
-        print(2)
+
     elif diceroll == 3:
         dice = pygame.image.load(r".\assets\three.png")
         dice = pygame.transform.scale(dice,size)
-        print(3)
+
     elif diceroll == 4:
         dice = pygame.image.load(r".\assets\four.png")
         dice = pygame.transform.scale(dice,size)
-        print(4)
+
     elif diceroll == 5:
         dice = pygame.image.load(r".\assets\five.png")
         dice = pygame.transform.scale(dice,size)
-        print(5)
+
     elif diceroll == 6:
         dice = pygame.image.load(r".\assets\six.png")
         dice = pygame.transform.scale(dice,size)
-        print(6)
-
 
     return (dice,diceroll)
 
 
-bg = pygame.image.load(r".\assets\board.jpg")
+bg = pygame.image.load(r".\assets\board_image.png")
 bg = pygame.transform.scale(bg,(650,650))
 
 player1_image = pygame.image.load(r".\assets\ellipse.png")
@@ -134,6 +132,7 @@ player2_image = pygame.image.load(r".\assets\record.png")
 
 player1_image = pygame.transform.scale(player1_image,(30,30))
 player2_image = pygame.transform.scale(player2_image,(30,30))
+
 
 player1name , player2name = input("Enter Player 1 and Player 2 name with space between them\n").split()
 player1name = "Player 1 : "+ player1name
